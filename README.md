@@ -21,8 +21,10 @@ Meu primeiro passo foi entender o problema e fazer algumas suposições de como 
 ### 24/01/2025 5:11PM
 Nesse momento acabei de terminar de ler o Paper, a conclusão que eu cheguei confirma minha intuição de que a melhor solução seria dividir o problema em multiplas etapas, e é assim que vou atacar o problema. Ainda não decidir como vou atacar cada etapa, mas vou começar a pensar nisso daqui a pouco.
 Etapas:
-- 1) Preprocessamento da imagem
-- 2) Detecção da placa
-- 3) Segmentação dos caracteres da placa
-- 4) Reconhecimento dos caracteres da placa
+1) Preprocessamento da imagem
+2) Detecção da placa
+3) Segmentação dos caracteres da placa
+4) Reconhecimento dos caracteres da placa
 
+### 24/01/2025 5:22PM
+Para ser sincero, fazia tempo que não fazia uma CLI então dei uma leve pesquisada em bibliotecas para me ajudar. Encontre a [Fire](https://github.com/google/python-fire/blob/master/docs/guide.md) do Google, dei uma lida na documentação, vi que é simples de implementar e decidi usar ela. Não quero gastar tempo com isso.
