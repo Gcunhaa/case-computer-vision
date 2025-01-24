@@ -77,7 +77,7 @@ class TrackingController:
                 # Run YOLOv8 inference on the frame
                 self.process_frame(frame, frame_number)
                 frame_number += 1
-                if frame_number == 40:
+                if frame_number == 2000:
                     break
                 # Break the loop if 'q' is pressed
                 if cv2.waitKey(1) & 0xFF == ord("q"):

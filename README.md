@@ -80,4 +80,8 @@ Adicionei uma etapa de tracking para acompanhar os veiculos, meu objetivo é peg
 
 
 ### 25/01/2025 06:27PM
-Terminei o pipeline completo utilizando tracking, agora ele detecta os veiculos e extrai a melhor imagem de cada placa, o problema é que as placas com baixas resoluções acabam sendo muito ruins para o OCR,por conta do ruído mesmo fazendo resize.
+Terminei o pipeline completo utilizando tracking, agora ele detecta os veiculos e extrai a melhor imagem de cada placa, o problema é que as placas com baixas resoluções acabam sendo muito ruins para o OCR, mesmo fazendo resize ( por conta do ruído).
+
+
+### 25/01/2025 08:06PM
+Fiz alguns testes, consegui identificar algumas placas e consegui validar que a segmentação de caracteres está funcionando - com muito espaço para melhorias. Infelizmente não vou ter tempo para melhorar dado as circunstâncias, mas vou deixar o código pronto para que vocês possam testar. 
