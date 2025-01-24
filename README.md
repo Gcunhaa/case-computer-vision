@@ -65,4 +65,9 @@ Placa alta resolução:
 ### 25/01/2025 09:42AM
 Adicionei a etapa de OCR, ela me trouxe um resultado ok, não foi perfeito. Esperava um resultado bem melhor dado que a placa parece bem nitida pra mim. O resultado esperado era "BCV6I89", mas o resultado foi "KBCVOI89 _ ". Vou adicionar a etapa de segmentação de caracteres e tentar melhorar o resultado. Meu tempo está acabando, então vou focar em placas brasileiras de alta resolução.
 
+### 25/01/2025 10:59AM
+Uma hora se passou desde a última etapa e não consegui avançar no resultado, apenas em conhecimento. Não estou conseguindo segmentar os caracteres da placa de maneira agradável, muito provavelmente por estar tentando fazer sem estudar muito, vou pesquisar de maneira mais aprofundada cada etapa, entender os conceitos fundamentais e tentar novamente.
 
+### 25/01/2025 00:47PM
+Dei uma refatorada no código e consegui finalmente adicionar a etapa de segmentação de caracteres, após encontrar algumas soluções na internet. Sei que o caminho mais fácil talvez teria sido utilizar o próprio YOLO já treinado para segmentar os caracteres, mas eu queria entender uma alternativa diferente do que só plugar uma rede neural já treinada. Além de claro ter um processamento computacional mais barato.
+![Segmentation](media/segmentation.png)
