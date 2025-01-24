@@ -71,3 +71,6 @@ Uma hora se passou desde a última etapa e não consegui avançar no resultado, 
 ### 25/01/2025 00:47PM
 Dei uma refatorada no código e consegui finalmente adicionar a etapa de segmentação de caracteres, após encontrar algumas soluções na internet. Sei que o caminho mais fácil talvez teria sido utilizar o próprio YOLO já treinado para segmentar os caracteres, mas eu queria entender uma alternativa diferente do que só plugar uma rede neural já treinada. Além de claro ter um processamento computacional mais barato.
 ![Segmentation](media/segmentation.png)
+
+### 25/01/2025 02:14PM
+Tive que fazer uma série de outras coisas durante esse tempo, mas finalmente consegui acertar 100% dos caracteres de uma placa. Minha ideia agora é generalizar a solução, incluir mais algumas etapas para melhorar a precisão. Para atingir os resultados que eu precisava do OCR adicionei um padding nas imagens dos caracteres e redimensionei para 28x28.

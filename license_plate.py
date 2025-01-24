@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
+import easyocr
 
 class LicencePlate:
     def __init__(self, image):
-        if self.image is None:
+        if image is None:
             raise ValueError("Image is required for creating a LicencePlate object")
         self.image = image
         self.processed_image = None
@@ -13,7 +14,6 @@ class LicencePlate:
     def preprocess_image(self):
         if self.image is None:
             raise ValueError("Image is required for preprocessing")
-
         gray = cv2.cvtColor(self.image,cv2.COLOR_BGR2GRAY)
         thresh_inv = cv2.adaptiveThreshold(gray,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY_INV,39,1)
         kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3,3))
@@ -24,6 +24,7 @@ class LicencePlate:
     def segment_characters(self):
         if self.processed_image is None:
             raise ValueError("Processed image is required for segmentation")
+     
         edges = self._canny_edge_detection(self.processed_image, 0.33)
         ctrs, _ = cv2.findContours(edges.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         sorted_ctrs = sorted(ctrs, key=lambda ctr: cv2.boundingRect(ctr)[0])
@@ -44,9 +45,19 @@ class LicencePlate:
                     # Draw rectangle on filtered image
                     cv2.rectangle(filtered_img, (x,y), (x + w, y + h), (90,0,255), 2)
                     
-                    # Crop the character from the original image
-                    char_roi = self.image[y:y+h, x:x+w]
-                    char_images.append(char_roi)
+                    # Add padding (2 pixels on each side)
+                    padding = 2
+                    y_start = max(0, y - padding)
+                    y_end = min(self.processed_image.shape[0], y + h + padding)
+                    x_start = max(0, x - padding)
+                    x_end = min(self.processed_image.shape[1], x + w + padding)
+                    
+                    # Crop the character from the original image with padding
+                    char_roi = self.processed_image[y_start:y_end, x_start:x_end]
+                    
+                    # Resize to 28x28 using cubic interpolation
+                    char_roi_resized = cv2.resize(char_roi, (28, 28), interpolation=cv2.INTER_CUBIC)
+                    char_images.append(char_roi_resized)
 
         # Display filtered image with rectangles
         cv2.imshow('Filtered Contours', filtered_img)
@@ -54,6 +65,23 @@ class LicencePlate:
         # Display individual characters
         for i, char_img in enumerate(char_images):
             cv2.imshow(f'Character {i}', char_img)
+            #cv2.imwrite(f'char_{i}.jpg', char_img)
+        return char_images
+
+    def extract_text(self):
+        if self.segmented_characters is None:
+            raise ValueError("Segmented characters are required for text extraction")
+        
+        reader = easyocr.Reader(['en'])
+        text = []
+        # Process each character image individually
+        for char_img in self.segmented_characters:
+            result = reader.readtext(char_img, detail=0, allowlist='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+            if result:
+                text.append(result[0])
+        
+        # Join all detected characters into a single string
+        return ''.join(text) if text else 'None'
 
     def _canny_edge_detection(self, image, sigma):
         v = np.median(image)
@@ -66,7 +94,8 @@ class LicencePlate:
 
 img = cv2.imread('plates/plate_0.jpg')
 plate = LicencePlate(img)
-plate.preprocess()
+plate.preprocess_image()
 plate.segment_characters()
+print(plate.extract_text())
 cv2.waitKey(0)
 cv2.destroyAllWindows()
