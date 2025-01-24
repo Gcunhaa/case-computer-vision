@@ -3,13 +3,14 @@ import numpy as np
 import easyocr
 
 class LicencePlate:
-    def __init__(self, image):
-        if image is None:
-            raise ValueError("Image is required for creating a LicencePlate object")
-        self.image = image
+    def __init__(self, box):
+        self.box = box
+        self.image = None
         self.processed_image = None
         self.segmented_characters = None
         self.extracted_text = None
+
+    #TODO: Implement method for cropping the image
 
     def preprocess_image(self):
         if self.image is None:
