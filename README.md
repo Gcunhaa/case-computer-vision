@@ -74,3 +74,10 @@ Dei uma refatorada no código e consegui finalmente adicionar a etapa de segment
 
 ### 25/01/2025 02:14PM
 Tive que fazer uma série de outras coisas durante esse tempo, mas finalmente consegui acertar 100% dos caracteres de uma placa. Minha ideia agora é generalizar a solução, incluir mais algumas etapas para melhorar a precisão. Para atingir os resultados que eu precisava do OCR adicionei um padding nas imagens dos caracteres e redimensionei para 28x28.
+
+### 25/01/2025 04:16PM
+Adicionei uma etapa de tracking para acompanhar os veiculos, meu objetivo é pegar a melhor imagem de cada placa. Isso acaba com a nececessidade de deduplicação de placas. Eu decidi não implementar o processamento em tempo real pra não estourar a memória já que guardo o histórico de todos os veículos, então vou calcular um score levando em consideração a confiança e resolução da placa. Após processar o vídeo inteiro, vou capturar a imagem de fato baseado no score e processa-la para descobrir a placa.
+
+
+### 25/01/2025 06:27PM
+Terminei o pipeline completo utilizando tracking, agora ele detecta os veiculos e extrai a melhor imagem de cada placa, o problema é que as placas com baixas resoluções acabam sendo muito ruins para o OCR,por conta do ruído mesmo fazendo resize.
