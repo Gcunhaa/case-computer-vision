@@ -54,9 +54,15 @@ Estou fazendo alguns testes, já estou salvando de maneira separada cada placa d
 Adicionei a etapa de preprocessamento de imagem:
 1) Converto para uma escala cinza para aumentar o contraste entre os caracteres e o background
 2) Aplico um threshold adaptativo para binarizar a imagem, isso me ajuda a remover o background
-3) Aplico um filtro de morfologia para remover o ruido
+3) Aplico um filtro de morfologia para remover o ruido 
+
 Ela tem me trazido resultados esperados quando a qualidade e resolução da placa é boa. Mas quando a resolução da placa é baixa, ele acaba escondendo os caracteres. Preciso começar a trabalhar em breve e assertividade não é prioridade no case então vou relevar por enquanto.
 Placa baixa resolução:
 ![placa_baixa_resolucao](media/placa_pre_baixa_res.jpg)
 Placa alta resolução:
 ![placa_boa_resolucao](media/placa_pre_boa_res.jpg)
+
+### 25/01/2025 09:42AM
+Adicionei a etapa de OCR, ela me trouxe um resultado ok, não foi perfeito. Esperava um resultado bem melhor dado que a placa parece bem nitida pra mim. O resultado esperado era "BCV6I89", mas o resultado foi "KBCVOI89 _ ". Vou adicionar a etapa de segmentação de caracteres e tentar melhorar o resultado. Meu tempo está acabando, então vou focar em placas brasileiras de alta resolução.
+
+

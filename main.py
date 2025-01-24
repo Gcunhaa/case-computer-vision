@@ -2,6 +2,7 @@ from ultralytics import YOLO
 import cv2
 import numpy as np
 from skimage.metrics import structural_similarity as ssim
+from ocr import extract_text_from_plate
 from preprocess import preprocess_plate
 # Load the model
 model = YOLO("best.pt")
@@ -52,8 +53,11 @@ def predict_frame(frame):
         # Only save if it's not a duplicate
         if not is_duplicate:
             pre_processed_plate = preprocess_plate(plate_region)
-            cv2.imwrite(f'plates/plate_{COUNTER}.jpg', pre_processed_plate)
+            extracted_text = extract_text_from_plate(pre_processed_plate)
+            print(extracted_text)
+            cv2.imwrite(f'plates/plate_{extracted_text}.jpg', pre_processed_plate)
             SAVED_PLATES.append(pre_processed_plate)
+
             COUNTER += 1
             
     return annotated_frame
