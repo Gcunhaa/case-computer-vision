@@ -101,4 +101,4 @@ def process_image(image_path):
 # Example usage
 video_path = "datasets/video-india.mp4"  # Replace with your video path
 #process_video(video_path)
-process_image("datasets/av-paulista.jpg")
+process_image("datasets/mini.jpeg")

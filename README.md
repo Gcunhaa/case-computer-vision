@@ -51,4 +51,12 @@ Testei aqui e vi que o modelo consegue detectar as placas, ele não dectou algum
 Estou fazendo alguns testes, já estou salvando de maneira separada cada placa detectada. Tive que enfrentar um problema que foi o modelo salvar multiplas imagens de uma mesma placa, mas consegui resolver com um mecanismo de deduplicação de imagens, ainda preciso ajustar o threshold de similaridade, mas vou deixar para depois, vou focar no processademnto de um frame agora. Se der tempo quero implementar um mecanismo pegar a melhor imagem de cada placa.
 
 ### 25/01/2025 09:20AM
-Adicionei a etapa de preprocessamento de imagem, ele tem me trazido resultados esperados quando a qualidade e resolução da placa é boa. Mas quando a resolução da placa é baixa, ele acaba escondendo os caracteres. Preciso começar a trabalhar em breve, então vou deixar isso para depois.
+Adicionei a etapa de preprocessamento de imagem:
+1) Converto para uma escala cinza para aumentar o contraste entre os caracteres e o background
+2) Aplico um threshold adaptativo para binarizar a imagem, isso me ajuda a remover o background
+3) Aplico um filtro de morfologia para remover o ruido
+Ela tem me trazido resultados esperados quando a qualidade e resolução da placa é boa. Mas quando a resolução da placa é baixa, ele acaba escondendo os caracteres. Preciso começar a trabalhar em breve e assertividade não é prioridade no case então vou relevar por enquanto.
+Placa baixa resolução:
+![placa_baixa_resolucao](media/placa_pre_baixa_res.jpg)
+Placa alta resolução:
+![placa_boa_resolucao](media/placa_pre_boa_res.jpg)
