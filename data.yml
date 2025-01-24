@@ -1,0 +1,13 @@
+  # Root directory relative to this yaml file
+train: images/train  # Train images directory
+val: images/val  # Validation images directory
+
+# Classes
+names:
+  0: license_plate  # Since we're only detecting license plates, we need just one class
+
+nc: 1
+
+# Paths to label files
+train_labels: labels/train
+val_labels: labels/val
