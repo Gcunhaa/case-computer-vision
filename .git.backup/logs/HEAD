@@ -1,0 +1,17 @@
+0000000000000000000000000000000000000000 8a3230bafe5d3cc227445401b7ec3f73b800349c Gabriel Cunha <gabriel.cunha@nexforce.co> 1737661142 -0300	clone: from https://github.com/Gcunhaa/case-computer-vision.git
+8a3230bafe5d3cc227445401b7ec3f73b800349c e02afd0c2643ff8f1c6bbd5eedd24a044a20e221 Gabriel Cunha <gabriel.cunha@nexforce.co> 1737661606 -0300	commit: 👀 First commit
+e02afd0c2643ff8f1c6bbd5eedd24a044a20e221 174c898ce188b4a42e36de0c7d489c8dc9b1ec42 Gabriel Cunha <gabriel.cunha@nexforce.co> 1737663241 -0300	commit: ✏️ Writing some of my research
+174c898ce188b4a42e36de0c7d489c8dc9b1ec42 94972ba2501b80770856b8da83133472080cf3ed Gabriel Cunha <gabriel.cunha@nexforce.co> 1737663869 -0300	commit: ✍️ Writing some of my research
+94972ba2501b80770856b8da83133472080cf3ed 1747dbd8d122c51e1ffd91eab4b8e443abad22c7 Gabriel Cunha <gabriel.cunha@nexforce.co> 1737721374 -0300	commit: 🕶️ Training my model
+1747dbd8d122c51e1ffd91eab4b8e443abad22c7 783fdb5d327749008b4680c68626b581249677aa Gabriel Cunha <gabriel.cunha@nexforce.co> 1737721428 -0300	commit: 🧅 Added inference and preprocessing
+783fdb5d327749008b4680c68626b581249677aa 5cd70af6a6903f9b6312aefab89069888a59c7dc Gabriel Cunha <gabriel.cunha@nexforce.co> 1737721687 -0300	commit: 🦲 Added some comments to the coding blog
+5cd70af6a6903f9b6312aefab89069888a59c7dc bd89ca26c12a1705bb3b954799128f97f7b8a0de Gabriel Cunha <gabriel.cunha@nexforce.co> 1737722724 -0300	commit: 🎌 Added OCR
+bd89ca26c12a1705bb3b954799128f97f7b8a0de adb129992b7582e855f2d1dad81070ac76f2ce29 Gabriel Cunha <gabriel.cunha@nexforce.co> 1737734084 -0300	commit: 🛃 Added char segmentation
+adb129992b7582e855f2d1dad81070ac76f2ce29 39971f50d4da20b01383c906aef952ea1ea99e7e Gabriel Cunha <gabriel.cunha@nexforce.co> 1737739011 -0300	commit: 🏹 Full license plate extraction achieved
+39971f50d4da20b01383c906aef952ea1ea99e7e e587ae1290bbf1bdb40b82902e97c459f0e5a443 Gabriel Cunha <gabriel.cunha@nexforce.co> 1737746486 -0300	commit: 🍉 Added car tracking and history
+e587ae1290bbf1bdb40b82902e97c459f0e5a443 e336ba2e553d7ccc8f6a246194f377331d87ab5c Gabriel Cunha <gabriel.cunha@nexforce.co> 1737753709 -0300	commit: 🥞 Finished first version of license plate detection
+e336ba2e553d7ccc8f6a246194f377331d87ab5c 28bdd2b2003d35a6b4920aa93bf3280b969500e0 Gabriel Cunha <gabriel.cunha@nexforce.co> 1737754136 -0300	commit: 💫 Added information to the coding blog
+28bdd2b2003d35a6b4920aa93bf3280b969500e0 c080b58aa76ffebbb9ca2f46db4504f6167c6c4a Gabriel Cunha <gabriel.cunha@nexforce.co> 1737760122 -0300	commit: 🍉 Finished tracking controller
+c080b58aa76ffebbb9ca2f46db4504f6167c6c4a 9f4876e9ad5936a59756bec4591315ae6315d380 Gabriel Cunha <gabriel.cunha@nexforce.co> 1737766254 -0300	commit: 🏁 Finished the case :)
+9f4876e9ad5936a59756bec4591315ae6315d380 c6c48860133ec0aa552781d298975b7a80ba16cc Gabriel Cunha <gabriel.cunha@nexforce.co> 1737766439 -0300	commit: Add model file using Git LFS
+c6c48860133ec0aa552781d298975b7a80ba16cc 7609bea11933bd3dc93ed7f930694a457b46353f Gabriel Cunha <gabriel.cunha@nexforce.co> 1737766761 -0300	commit: Add model file using Git LFS

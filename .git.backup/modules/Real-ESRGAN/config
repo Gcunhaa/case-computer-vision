@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	worktree = ../../../Real-ESRGAN
+[remote "origin"]
+	url = https://github.com/xinntao/Real-ESRGAN.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+	vscode-merge-base = origin/master
