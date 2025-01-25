@@ -1,0 +1,1 @@
+"""License Plate Case - A tool for license plate detection and tracking""" 

@@ -1,8 +1,59 @@
-# case-computer-vision
+# License Plate Detection Tool
 
+A Python-based command-line tool for detecting and recognizing license plates in videos and images. This tool uses YOLO (You Only Look Once) for vehicle detection and tracking, combined with custom image processing techniques for license plate recognition.
 
+## Installation
 
-# Code blog
+### Direct Install from GitHub
+```bash
+pip install git+https://github.com/Gcunhaa/case-computer-vision.git
+```
+
+## Usage
+
+### Examples
+
+1. Process a video file:
+```bash
+license-plate-case path/to/video.mp4
+```
+
+2. Process an image:
+```bash
+license-plate-case path/to/image.jpg
+```
+
+3. Process first 50 frames of a video:
+```bash
+license-plate-case path/to/video.mp4 --frame_breakpoint=50
+```
+
+### Output
+
+The tool will:
+1. Track vehicles in the video/image
+2. Detect license plates
+3. Process and recognize the text on the plates
+4. Print results for each detected vehicle, including:
+   - Vehicle type (car, motorcycle, bus, or truck)
+   - Vehicle tracking ID
+   - Detected license plate number
+
+### Notes
+- The tool uses YOLO for vehicle detection and tracking
+- Best results are achieved with high-resolution input and good lighting conditions
+- Processing time depends on the input file size and your hardware capabilities
+
+## O que eu gostaria de melhorar
+- Melhorar a segmentação de caracteres utilizando uma rede neural
+- Treinar o modelo YOLO para detectar placas com baixa resolução
+- Melhorar o preprocessamento de imagem para permitir reconhecer placas com baixa resolução (supersize e refinamento dos parametros para reduzir o ruído)
+- Melhorar o preprocessamento de imagem corrigindo o anglo de projeção
+- Treinar o modelo de OCR para reconhecer caracteres com baixa resolução
+- Implementar operações vetoriais usando o numpy para permitir que o processamento ocorra em tempo real
+- Implementar um controle de memória melhor para permitir que o processamento ocorra em tempo real
+
+## Code blog
 
 Na definição do case foi dito que vocês gostariam de ter uma visão geral de como o candidato ataca o problema, a linha de raciocínio e a solução proposta. Pensando nisso vou tentar resumir passo a passo o que eu fiz pra resolve-lo. 
 
@@ -85,3 +136,6 @@ Terminei o pipeline completo utilizando tracking, agora ele detecta os veiculos 
 
 ### 25/01/2025 08:06PM
 Fiz alguns testes, consegui identificar algumas placas e consegui validar que a segmentação de caracteres está funcionando - com muito espaço para melhorias. Infelizmente não vou ter tempo para melhorar dado as circunstâncias, mas vou deixar o código pronto para que vocês possam testar. 
+
+### 25/01/2025 09:08PM
+Criei a ferramenta CLI e fiz algumas alterações na lógica de encontrar a melhor placa, tirei os thresholds, normalizei o tamanho do box e calculei uma média ponderada entre o tamanho do box e a confiança da placa. 
