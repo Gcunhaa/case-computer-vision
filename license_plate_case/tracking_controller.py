@@ -8,6 +8,8 @@ from tqdm import tqdm
 from pathlib import Path
 import os
 
+from license_plate_case.model_utils import get_model_path
+
 from .license_plate import LicencePlate
 from .tracking_frame import VehicleTrackingFrame
 from .vehicle import Vehicle
@@ -25,7 +27,7 @@ class TrackingController:
         # Load models using absolute paths
         self.tracking_model = YOLO(str(models_dir / "yolo11n.pt"))
         self.tracking_model.fuse()
-        self.license_plate_model = YOLO(str(models_dir / "best.pt"))
+        self.license_plate_model = YOLO(str(get_model_path()))
         self.tracked_vehicles : list[Vehicle] = []
         
     def process_frame(self, frame, frame_number):
